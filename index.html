@@ -71,6 +71,7 @@
     <audio id="yesSound" src="/valentines2024/src/sounds/HAPPY HAPPY HAPPY  TikTok sound effect.mp3"></audio>
     <audio id="noSound" src="/valentines2024/src/sounds/Banana Cat Crying - Sound Effect.mp3"></audio>
     <audio id="madSound" src="/valentines2024/src/sounds/Among us sound effect.mp3"></audio>
+    <audio id="endingSound" src="/valentines2024/src/sounds/MAX ft HUH YUNJIN (LE SSERAFIM) - Stupid in Love  TikTok Spoiler (Color Coded EngPT-BR).mp3"></audio>
 
     <script>
         
@@ -92,6 +93,10 @@
         document.getElementById("yesButton").addEventListener("click", function() {
             playSound("yesSound");
             document.getElementById("valentineImage").src = "/valentines2024/src/images/ezgif-1-6a647ab490.gif";
+            setTimeout(function() {
+                document.getElementById("valentineImage").src = "/valentines2024/src/images/ezgif-1-1e45abe76b.gif"; // Change image after 4 seconds
+                playSound("endingSound");
+            }, 4000);
         });
 
         // Event listener for No button
