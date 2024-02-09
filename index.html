@@ -107,7 +107,8 @@
                     yesButton.classList.remove("shake"); // Remove the shake class after 0.5 seconds
                 }, 500);
                 noButtonClickCount++; // Increment the click count
-                yesButton.style.marginRight = (noButtonClickCount * 10) + 'px'; // Adjust margin dynamically
+                var noButtonWidth = document.getElementById("noButton").offsetWidth; // Get width of the No button
+                yesButton.style.marginRight = (noButtonWidth + (noButtonClickCount * 10)) + 'px'; // Adjust margin dynamically
             } else {
                 // After 4 clicks, show custom image
                 var noButton = document.getElementById("noButton");
