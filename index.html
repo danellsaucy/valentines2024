@@ -97,6 +97,7 @@
         document.getElementById("noButton").addEventListener("click", function() {
             var valentineImage = document.getElementById("valentineImage");
             scale *= 1.5; // Increase scale factor by 0.1
+            console.log(noButtonClickCount);
             if (noButtonClickCount < 4) { // Check if less than 4 clicks
                 valentineImage.src = "/valentines2024/src/images/banana-crying-cat.gif";
                 playSound("noSound");
