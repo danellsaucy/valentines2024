@@ -8,13 +8,22 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             color: #ff007f;
+            font-size: 24px;
+            margin-top: 20px;
         }
         img {
             max-width: 100%;
             height: auto;
+            margin-top: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
         }
         .button {
@@ -36,9 +45,26 @@
 </head>
 <body>
     <h1>Will you be my valentine?</h1>
-    <img src="/valentines2024/images/cat_w_rose.jpeg" alt="Please">
-    <br>
-    <a href="#" class="button">Yes</a>
-    <a href="#" class="button">No</a>
+    <img src="/valentines2024/src/images/cat_w_rose.jpeg" alt="Please">
+    <div class="button-container">
+        <a href="#" class="button">Yes</a>
+        <a href="#" class="button" id="noButton">No</a>
+    </div>
+
+    <!-- Sound -->
+    <audio id="noSound" src="/valentines2024/src/sounds/Banana Cat Crying - Sound Effect.mp3"></audio>
+
+    <script>
+        // Function to play sound
+        function playSound() {
+            var audio = document.getElementById("noSound");
+            audio.play();
+        }
+
+        // Event listener for No button
+        document.getElementById("noButton").addEventListener("click", function() {
+            playSound();
+        });
+    </script>
 </body>
 </html>
