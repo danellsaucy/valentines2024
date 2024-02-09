@@ -10,6 +10,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            background-color: #F8C8DC; /* Set background color */
         }
         h1 {
             color: #ff007f;
@@ -100,6 +101,7 @@
                     yesButton.classList.remove("shake"); // Remove the shake class after 0.5 seconds
                 }, 500);
                 noButtonClickCount++; // Increment the click count
+                yesButton.style.marginRight = (noButtonClickCount * 10) + 'px'; // Adjust margin dynamically
             }
         });
     </script>
