@@ -56,10 +56,17 @@
     <audio id="noSound" src="/valentines2024/src/sounds/Banana Cat Crying - Sound Effect.mp3"></audio>
 
     <script>
+        
+        var currentAudio = null; // Added variable to keep track of currently playing audio
+
         // Function to play sound
         function playSound(audioId) {
+            if (currentAudio) {
+                currentAudio.pause(); // Pause the currently playing audio
+            }
             var audio = document.getElementById(audioId);
             audio.play();
+            currentAudio = audio; // Set the currently playing audio
         }
 
         // Event listener for Yes button
