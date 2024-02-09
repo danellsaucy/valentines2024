@@ -94,16 +94,20 @@
 
         // Event listener for No button
         document.getElementById("noButton").addEventListener("click", function() {
-            playSound("noSound");
-            document.getElementById("valentineImage").src = "/valentines2024/src/images/banana-crying-cat.gif";
+            var valentineImage = document.getElementById("valentineImage");
             scale *= 1.5; // Increase scale factor by 0.1
             if (noButtonClickCount < 4) { // Check if less than 4 clicks
+                valentineImage.src = "/valentines2024/src/images/banana-crying-cat.gif";
+                playSound("noSound");
                 yesButton.style.transform = "scale(" + scale + ")"; // Apply new scale factor
                 setTimeout(function() {
                     yesButton.classList.remove("shake"); // Remove the shake class after 0.5 seconds
                 }, 500);
                 noButtonClickCount++; // Increment the click count
                 yesButton.style.marginRight = (noButtonClickCount * 10) + 'px'; // Adjust margin dynamically
+            } else {
+                // After 4 clicks, show custom image
+                valentineImage.src = "/valentines2024/src/images/madcat.jpeg";
             }
         });
     </script>
