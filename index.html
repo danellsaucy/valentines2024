@@ -74,6 +74,7 @@
         
         var currentAudio = null; // Added variable to keep track of currently playing audio
         var noButtonClickCount = 0; // Counter for number of clicks on "No" button
+        var scale = 1; // Initial scale factor
 
         // Function to play sound
         function playSound(audioId) {
@@ -95,8 +96,9 @@
         document.getElementById("noButton").addEventListener("click", function() {
             playSound("noSound");
             document.getElementById("valentineImage").src = "/valentines2024/src/images/banana-crying-cat.gif";
+            scale *= 1.5; // Increase scale factor by 0.1
             if (noButtonClickCount < 4) { // Check if less than 4 clicks
-                yesButton.classList.add("enlarge", "shake"); // Add classes to increase size and shake
+                yesButton.style.transform = "scale(" + scale + ")"; // Apply new scale factor
                 setTimeout(function() {
                     yesButton.classList.remove("shake"); // Remove the shake class after 0.5 seconds
                 }, 500);
