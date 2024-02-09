@@ -70,6 +70,7 @@
     <!-- Sounds -->
     <audio id="yesSound" src="/valentines2024/src/sounds/HAPPY HAPPY HAPPY  TikTok sound effect.mp3"></audio>
     <audio id="noSound" src="/valentines2024/src/sounds/Banana Cat Crying - Sound Effect.mp3"></audio>
+    <audio id="madSound" src="/valentines2024/src/sounds/Among us sound effect.mp3"></audio>
 
     <script>
         
@@ -112,6 +113,7 @@
                 yesButton.style.marginRight = (noButtonWidth + (noButtonClickCount * 10)) + 'px'; // Adjust margin dynamically
             } else {
                 // After 4 clicks, show custom image
+                playSound("madSound");
                 var noButton = document.getElementById("noButton");
                 noButton.parentNode.removeChild(noButton); // Remove the "No" button from the DOM
                 var yesButton = document.getElementById("yesButton");
