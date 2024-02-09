@@ -97,9 +97,13 @@
                 document.getElementById("valentineImage").src = "/valentines2024/src/images/ezgif-1-1e45abe76b.gif"; // Change image after 4 seconds
                 playSound("endingSound");
                 var noButton = document.getElementById("noButton");
-                noButton.parentNode.removeChild(noButton); // Remove the "No" button from the DOM
+                if (noButton) {
+                    noButton.parentNode.removeChild(noButton); // Remove the "No" button from the DOM
+                }
                 var yesButton = document.getElementById("yesButton");
-                yesButton.parentNode.removeChild(yesButton); 
+                if (yesButton) {
+                    yesButton.parentNode.removeChild(yesButton); 
+                }
                 var textContainer = document.createElement("div");
                 textContainer.innerHTML = "<p>Thank you for your response!</p>";
                 document.body.appendChild(textContainer); // Add text underneath image
@@ -111,7 +115,7 @@
             var valentineImage = document.getElementById("valentineImage");
             scale *= 1.5; // Increase scale factor by 0.1
             console.log(noButtonClickCount);
-            if (noButtonClickCount < 4) { // Check if less than 4 clicks
+            if (noButtonClickCount < 3) { // Check if less than 4 clicks
                 valentineImage.src = "/valentines2024/src/images/banana-crying-cat.gif";
                 playSound("noSound");
                 var yesButton = document.getElementById("yesButton");
