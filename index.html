@@ -41,6 +41,9 @@
         .button:hover {
             background-color: #ff0055;
         }
+        .button.enlarge {
+            transform: scale(1.1); /* Increase size by 10% */
+        }
     </style>
 </head>
 <body>
@@ -79,6 +82,7 @@
         document.getElementById("noButton").addEventListener("click", function() {
             playSound("noSound");
             document.getElementById("valentineImage").src = "/valentines2024/src/images/banana-crying-cat.gif";
+            document.getElementById("yesButton").classList.add("enlarge"); // Add class to increase size
         });
     </script>
 </body>
