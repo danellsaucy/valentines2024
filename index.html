@@ -17,8 +17,8 @@
             margin-top: 20px;
         }
         img {
-            max-width: 100%;
-            height: auto;
+            width: 300px; /* Set a fixed width */
+            height: auto; /* Maintain aspect ratio */
             margin-top: 20px;
         }
         .button-container {
@@ -45,25 +45,33 @@
 </head>
 <body>
     <h1>Will you be my valentine?</h1>
-    <img src="/valentines2024/src/images/cat_w_rose.jpeg" alt="Please">
+    <img id="valentineImage" src="/valentines2024/src/images/cat_w_rose.jpeg" alt="Please">
     <div class="button-container">
-        <a href="#" class="button">Yes</a>
+        <a href="#" class="button" id="yesButton">Yes</a>
         <a href="#" class="button" id="noButton">No</a>
     </div>
 
-    <!-- Sound -->
+    <!-- Sounds -->
+    <audio id="yesSound" src="/valentines2024/src/sounds/HAPPY HAPPY HAPPY  TikTok sound effect.mp3"></audio>
     <audio id="noSound" src="/valentines2024/src/sounds/Banana Cat Crying - Sound Effect.mp3"></audio>
 
     <script>
         // Function to play sound
-        function playSound() {
-            var audio = document.getElementById("noSound");
+        function playSound(audioId) {
+            var audio = document.getElementById(audioId);
             audio.play();
         }
 
+        // Event listener for Yes button
+        document.getElementById("yesButton").addEventListener("click", function() {
+            playSound("yesSound");
+            document.getElementById("valentineImage").src = "/valentines2024/src/images/ezgif-1-6a647ab490.gif";
+        });
+
         // Event listener for No button
         document.getElementById("noButton").addEventListener("click", function() {
-            playSound();
+            playSound("noSound");
+            document.getElementById("valentineImage").src = "/valentines2024/src/images/banana-crying-cat.gif";
         });
     </script>
 </body>
