@@ -44,6 +44,17 @@
         .button.enlarge {
             transform: scale(1.1); /* Increase size by 10% */
         }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        .button.shake {
+            animation: shake 0.5s ease-in-out;
+        }
+        
     </style>
 </head>
 <body>
@@ -83,6 +94,9 @@
             playSound("noSound");
             document.getElementById("valentineImage").src = "/valentines2024/src/images/banana-crying-cat.gif";
             document.getElementById("yesButton").classList.add("enlarge"); // Add class to increase size
+            setTimeout(function() {
+                document.getElementById("yesButton").classList.remove("shake"); // Remove the shake class after 0.5 seconds
+            }, 500);
         });
     </script>
 </body>
